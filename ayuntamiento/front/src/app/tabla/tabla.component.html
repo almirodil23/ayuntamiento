@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<div>
+    <table>
+        <caption>Proovedores</caption>
+        <thead>
+            <tr>
+                <th>CIF</th>
+                <th>Nombre</th>
+                <th>Actividad</th>
+                <th>Dirección</th>
+                <th>Localidad</th>
+                <th>Código Postal</th>
+                <th>Teléfono</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let proovedor of proovedores$ | async">
+              <td style="line-height: 180%;"class="color">{{proovedor.cif}}</td>  
+              <td class="color">{{proovedor.nombre}}</td>
+              <td class="color">{{proovedor.actividad}}</td>
+              <td class="color">{{proovedor.direccion}}</td>
+              <td class="color">{{proovedor.localidad}}</td>
+              <td class="color">{{proovedor.codigoPostal}}</td>
+              <td style="line-height: 180%;"class="color">{{proovedor.telefono}}</td>
+              <td *ngIf="option == 1"><button (click)="Modificar(proovedor.cif)">Modificar</button></td>
+              <td *ngIf="option == 1"><button (click)="Eliminar(proovedor.cif)">Eliminar</button></td>
+            </tr>
+            <div *ngIf="option == 0">
+                <app-modificar></app-modificar>
+            </div>
+        </tbody>
+    </table>
+</div>
+
+

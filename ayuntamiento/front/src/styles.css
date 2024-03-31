@@ -1,0 +1,73 @@
+html{
+    width:100vw;
+    height:100vh;
+    background-image: url(./assets/fondo.jpeg);
+    background-size: cover;
+    overflow: hidden; /* Evita las barras de desplazamiento */
+    background-position: center; /* Centra la imagen en el contenedor */
+    box-sizing: border-box;
+    color:white;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+body {
+    max-width:100%; /* No permitir que el body sea más ancho que el html */
+    height:83vh;
+    max-height:100%;
+    padding: 40px; /* Espacio interno dentro del margen */
+    box-shadow: 0 0 0 10px white; /* Crear un margen de color blanco */
+}
+
+.root {
+    display:flex;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+tbody{
+  margin-bottom: 10px; /* Ajusta este valor según la separación deseada */
+  color:white;
+}
+
+
+table{
+    max-width: 90%;
+      border-collapse:collapse;
+
+}
+
+
+caption{
+    font-size: 180%;
+    font-weight: 600;
+    padding-bottom: 5%;
+}
+
+.color {
+    padding: 8px;
+    text-align: center; 
+    background-color: rgba(39, 32, 36, 0.5);
+
+  }
+
+button {
+    display:flex;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #f1f1f1;
+    color: black;
+    font-size: 70%;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+button:hover {
+    background-color: black;
+    color: white;
+  }
