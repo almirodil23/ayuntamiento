@@ -1,37 +1,21 @@
-name: Despliegue en Heroku
+name: Despliegue Ayuntamiento
 
 on:
   push:
     branches:
-      - master  # Aquí puedes cambiar el nombre de tu rama principal si es diferente
+      - master
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout del código
-        uses: actions/checkout@v3  # Actualizamos a la versión 3 de actions/checkout
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-      - name: Configurar Git
-        run: |
-          git config --global user.email "almirodil@gmail.com"
-          git config --global user.name "Alvaro"
-
-      - name: Configurar Node.js
-        uses: actions/setup-node@v3  # Actualizamos a la versión 3 de actions/setup-node
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: '18.17.0'
-
-      - name: Instalar dependencias del frontend
-        working-directory: ./ayuntamiento/front
-        run: |
-          npm install
-          npm run build
-
-      - name: Instalar dependencias de la API
-        working-directory: ./ayuntamiento/api
-        run: |
-          npm install
+          node-version: 18.17.0  # Cambiado a una versión más común, ajusta según tus necesidades
 
       - name: Deploy to Heroku
         uses: akhileshns/heroku-deploy@v3.12.14
@@ -39,11 +23,3 @@ jobs:
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
           heroku_app_name: "ayuntamiento"
           heroku_email: "alvaroados4b16@gmail.com"
-
-      - name: Despliegue en Heroku
-        run: |
-          heroku git:remote -a ayuntamiento
-          git add .
-          git commit -m "Despliegue automático en Heroku"
-          git push heroku HEAD:main --force
-
