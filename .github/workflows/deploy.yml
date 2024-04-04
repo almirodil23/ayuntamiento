@@ -31,7 +31,7 @@ jobs:
 
       - name: Desplegar en Heroku
         run: heroku create
-        run: git push heroku master
+        run: git push heroku main  # Cambiando "master" a "main" para el despliegue
         run: heroku container:release web-front web-api --app ayuntamiento
 
         env:
