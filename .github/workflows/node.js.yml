@@ -20,7 +20,10 @@ jobs:
       - name: Deploy to Heroku
         uses: gonuit/heroku-docker-deploy@v1.3.3
         with:
-          dontuseforce: false
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
           heroku_app_name: "ayuntamiento"
-          heroku_email: "alvaroados4b16@gmail.com"
+          email: "alvaroados4b16@gmail.com"
+          dockerfile_directory: "./"  # Directorio donde se encuentra el Dockerfile, ajusta según tu estructura de archivos
+          dockerfile_name: "Dockerfile"  # Nombre de tu Dockerfile
+          docker_options: "--no-cache"
+          process_type: "web"
