@@ -8,8 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
-     steps:
+    steps:
     - name: Checkout del código
       uses: actions/checkout@v3  # Actualizamos a la versión 3 de actions/checkout
 
