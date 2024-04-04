@@ -35,12 +35,14 @@ jobs:
 
     - name: Iniciar sesión en Heroku
       run: heroku login -i
+    - name: Autenticar con Heroku
+      env:
+        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+      run: heroku auth:token -i
+      
 
     - name: Despliegue en Heroku
-    - name: Iniciar sesión en Heroku
-        env:
-           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        run: heroku login --no-interactive -i    
+        
       run: |
         heroku git:remote -a ayuntamiento
         git add .
