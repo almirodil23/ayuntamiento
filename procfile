@@ -1,0 +1,2 @@
+web: npm start --prefix ayuntamiento/front
+api: npm start --prefix ayuntamiento/api
