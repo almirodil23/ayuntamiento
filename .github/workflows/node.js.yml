@@ -25,8 +25,8 @@ jobs:
             registry.heroku.com/ayuntamiento/web-front
             registry.heroku.com/ayuntamiento/web-api
           dockerfile: |
-            ayuntamiento/front/Dockerfile
-            ayuntamiento/api/Dockerfile
+            ./ayuntamiento/front/Dockerfile
+            ./ayuntamiento/api/Dockerfile
 
       - name: Login to Heroku Registry
         run: echo "${{ secrets.HEROKU_API_KEY }}" | docker login -u _ --password-stdin registry.heroku.com
