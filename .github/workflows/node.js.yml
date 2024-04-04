@@ -15,7 +15,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18.17.0  # Cambiado a una versión más común, ajusta según tus necesidades
+          node-version: 18.17.0  # Ajusta según tu versión necesaria
 
       - name: Deploy to Heroku
         uses: gonuit/heroku-docker-deploy@v1.3.3
