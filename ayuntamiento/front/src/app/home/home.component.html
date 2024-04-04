@@ -1,0 +1,16 @@
+<div *ngIf="(componenteActual === 1 || 2 || 3 || 4) && authService.isAuthenticated" style="width:70vw;">
+    <app-tabla style="width:90vw;"></app-tabla>
+    <div *ngIf="componenteActual ===4" class="eliminar">
+      <app-eliminar></app-eliminar>
+    </div>
+  </div>
+  <div *ngIf="(componenteActual ===1)" class="principalbutton">
+      <button  (click)="Modificar(2)">Añadir Proovedor</button>
+    </div>  
+  <div *ngIf="componenteActual === 2" style="height:100%; padding-top:20vh;">
+    <app-formulario ></app-formulario>
+  </div>
+  <div *ngIf="componenteActual === 3">
+    <app-modificar  (proovedor)="Enviar(proovedor)"></app-modificar>
+  </div>
+  

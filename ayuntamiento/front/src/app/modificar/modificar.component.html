@@ -1,22 +1,40 @@
 <!DOCTYPE html>
-<div>
-    <table>
-        <caption>Proovedores</caption>
-        <thead>
-            <tr>
-                <th>CIF</th>
-                <th>Nombre</th>
-                <th>Actividad</th>
-                <th>Dirección</th>
-                <th>Localidad</th>
-                <th>Código Postal</th>
-                <th>Teléfono</th>
-                <th></th>
-            </tr>
-        </thead>
-    </table>
-</div>
-
-
-
+<div style="height:100%;max-height:100%;padding-top:20vh;">
+  <div>
+    <h1 style="font-size: medium;">Modificando...</h1>
+  </div>  
+  <div class="lista">
+    <form [formGroup]="add" id="add" (ngSubmit)="onSubmit()">
+    <div class="param">
+        <label for="cif">CIF</label>
+        <input type="text" id="cif" formControlName="cif" value="[[proovedor.cif]]" required>
+    </div> 
+    <div class="param">   
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" formControlName="nombre" required>
+    </div>
+    <div class="param">
+        <label for="actividad">Actividad</label>
+        <input type="text" id="actividad" formControlName="actividad">
+    </div>    
+    <div class="param">
+        <label for="direccion">Dirección</label>
+        <input type="text" id="direccion" formControlName="direccion">
+    </div>
+    <div class="param">
+        <label for="localidad">Localidad</label>
+        <input type="text" id="localidad" formControlName="localidad">
+    </div>    
+    <div class="param">    
+        <label for="codigoPostal">Código Postal</label>
+        <input type="numeric" id="codigoPostal" formControlName="codigoPostal">
+    </div>
+    <div class="param">
+        <label for="telefono">Teléfono</label>
+        <input type="text" id="telefono" formControlName="telefono">
+    </div>
+    <div>
+        <button type="submit">Enviar</button>
+    </div>
+    </form>
 

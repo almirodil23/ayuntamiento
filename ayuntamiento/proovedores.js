@@ -12,7 +12,7 @@ const proovedorModelo = {
     {
       cif: 'A12345678',
       nombre: 'Tibaja S.L.',
-      actividad: 'Suministro de materiales de construcción',
+      actividad: 'Suministro de construcción',
       direccion: 'Calle de los Proveedores, 123',
       localidad: 'A Coruña',
       codigoPostal: '15060',
@@ -104,8 +104,7 @@ const putProovedor = (req,res) => {
 };
 
 const deleteProovedor = (req,res) => {
-  const proovedor=req.body;
-  const cif=proovedor.cif;
+  const cif=req.params.cif;
   const idx= proovedores.findIndex(a=>a.cif===cif)
   if (idx !== -1) {
     proovedores.splice(idx, 1);

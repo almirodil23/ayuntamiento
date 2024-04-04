@@ -1,6 +1,12 @@
-<!--<router-outlet />-->
-<div>
-<app-tabla></app-tabla>
-<app-eliminar></app-eliminar>
+    <div style="width:90%; justify-content:start;">
+        <div *ngIf="(componenteActual === 0) " style="display:flex;align-self:center;justify-self:center;margin-left:30vw;">
+            <app-login></app-login>
+        </div>
+    <div *ngIf="componenteActual === 1 || 2 || 3 || 4">
+      <app-home class="root"></app-home>
+      <div *ngIf="componenteActual !=0" >
+        <button (click)="deslogear()" style="text-align:center;position:fixed;">LogOut</button>
+      </div>
+    </div>
+
 </div>
-<app-formulario></app-formulario>

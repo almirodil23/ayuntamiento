@@ -1,11 +1,9 @@
-
-
 .param{
     display:flex;
     width:100%;
     flex-direction: column;
     justify-content: center;
-    height: 100%;
+    height: 5.5vh;
     padding:8%;
 }
 
@@ -14,3 +12,10 @@
     max-height: 100%;
     margin-top: 15px;
 }
+
+.botones{
+    display:flex;
+    margin-top: 10%;
+    justify-content: space-around;
+}
+

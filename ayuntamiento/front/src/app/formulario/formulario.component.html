@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <div style="height:100%;max-height:100%;">
-  <div style="display:flex;align-items:center;justify-content:end;">
-    <button  (click)="agregar()">Añadir Proovedor</button>
-  </div>  
-  <div *ngIf="option == 0" class="lista">
+  <div class="lista">
     <form [formGroup]="add" id="add" (ngSubmit)="onSubmit()">
     <div class="param">
         <label for="cif">CIF</label>
@@ -33,7 +30,12 @@
         <label for="telefono">Teléfono</label>
         <input type="text" id="telefono" formControlName="telefono">
     </div>
+    <div class="botones">
     <div>
         <button type="submit">Enviar</button>
     </div>
+    <div>
+        <button (click)="Cancelar()">Cancelar</button>
+    </div>
+</div>
     </form>

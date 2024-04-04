@@ -1,0 +1,16 @@
+div{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:20%;
+
+}
+
+button{
+    align-self: center;
+    text-align: center;
+}
+
+h1{
+    display:flex;
+    justify-content: center;}

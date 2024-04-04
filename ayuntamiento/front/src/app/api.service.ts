@@ -43,9 +43,13 @@ export class APIService {
   actualizarProovedor(proovedor:any): Observable<any>{
     return this.http.put(this.url,proovedor)
   }
+
+  actualizarProovedoryCif(proovedor:any): Observable<any>{
+    return this.http.put(this.url,proovedor)
+  }
   
   eliminarProovedor(cif:string): Observable<any>{ 
-    return this.http.delete(`${this.url}/:${cif}`)
+    return this.http.delete(`${this.url}/${cif}`)
   }
   
 }

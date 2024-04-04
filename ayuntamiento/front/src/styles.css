@@ -1,63 +1,57 @@
 html{
-    width:100vw;
-    height:100vh;
     background-image: url(./assets/fondo.jpeg);
-    background-size: cover;
-    overflow: hidden; /* Evita las barras de desplazamiento */
-    background-position: center; /* Centra la imagen en el contenedor */
-    box-sizing: border-box;
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    
+}
+
+body{
+    height:100%;
+    width:100vw;
+    margin:0;
     color:white;
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
-    font-style: normal;
+    font-style: auto;
     font-weight: 400;
-  }
+    overflow-y: hidden;
 
-body {
-    max-width:100%; /* No permitir que el body sea más ancho que el html */
-    height:83vh;
-    max-height:100%;
-    padding: 40px; /* Espacio interno dentro del margen */
-    box-shadow: 0 0 0 10px white; /* Crear un margen de color blanco */
+}
+
+div{
+    display:flex;
+    width:100%;
 }
 
 .root {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.init{
+    width:100vw;
+}
+
+.eliminar{
     display:flex;
-    max-width: 100%;
-    max-height: 100%;
+    position: absolute;
+    width: 80vw;
+    height: 70vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(2, 2, 2, 0.95);
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 1001; 
+    justify-content: center;
 }
-
-
-tbody{
-  margin-bottom: 10px; /* Ajusta este valor según la separación deseada */
-  color:white;
-}
-
-
-table{
-    max-width: 90%;
-      border-collapse:collapse;
-
-}
-
-
-caption{
-    font-size: 180%;
-    font-weight: 600;
-    padding-bottom: 5%;
-}
-
-.color {
-    padding: 8px;
-    text-align: center; 
-    background-color: rgba(39, 32, 36, 0.5);
-
-  }
 
 button {
-    display:flex;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
+    display:flex; 
     background-color: #f1f1f1;
     color: black;
     font-size: 70%;
@@ -71,3 +65,149 @@ button:hover {
     background-color: black;
     color: white;
   }
+
+  caption{
+    display:flex;
+    margin-bottom:5vh;
+    margin-top:10vh;
+    font-size:4vw;
+    align-items: center;
+    justify-content: center;
+  }
+
+table{
+    width:70vw;
+    height:100vh;
+    display:flex;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    flex-direction: column;
+    justify-content: end;
+}  
+
+tbody{
+    height:70vh;
+    margin-bottom: 10vh; 
+    color:white;
+    flex-direction: column;
+    display:flex;
+    overflow-x:hidden;
+}  
+thead {
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+tr{
+    height: 10vh;
+}
+
+th, td{
+    display:flex;
+    width:10vw;
+    justify-content: space-around;
+    text-align: center; 
+    align-items: center;
+
+}
+
+
+.principalbutton{
+    display:flex;
+    align-items:start;
+    justify-content:center;
+    padding-top:10%;
+    margin-left:5vw;
+    width:10vw;
+    height:5vh;
+}
+
+
+.eliminar{
+    display:flex;
+    position: absolute;
+    width: 80vw;
+    height: 70vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(2, 2, 2, 0.95);
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 1001; 
+    justify-content: center;
+}
+
+tr{
+    display:flex;
+    padding-bottom:0.5%;
+    width:100vw;
+    justify-content: flex-start;
+  }  
+  
+
+
+.color {
+    display:flex;
+    text-align: center; 
+    background-color:rgba(2, 2, 2, 0.5);
+    align-items: center;
+    justify-content: center;
+  }
+
+.color1{     
+display:flex;
+text-align: center; 
+background-color:rgba(2, 2, 2, 0.5);
+align-items: center;
+justify-content: center;
+border: solid 5px transparent;
+border-top-left-radius: 7px;
+border-bottom-left-radius: 7px;
+}
+
+.color-1{
+display:flex;
+text-align: center; 
+background-color:rgba(2, 2, 2, 0.5);
+align-items: center;
+justify-content: center;
+border: solid 5px transparent;
+border-top-right-radius: 7px;
+border-bottom-right-radius: 7px;
+}    
+
+@media (max-width: 1133px){
+    .root {
+        justify-content: space-around;
+
+    }
+    .principalbutton{
+        display:flex;
+        position:absolute;
+        align-items: center;
+        z-index: 1;
+        margin-left: 10vw;
+        position:absolute;
+        top: 0; 
+        right: 0; 
+        padding: 4%;
+    }
+    table{
+            display: grid;
+            font-size:1.5vw;
+            width: 100%;
+            grid-template-columns: repeat(auto-fill, minmax(1fr)); /* Columnas de tamaño mínimo de 200px y creciendo */
+    }
+    caption{
+        margin-bottom:0;
+        margin-top:10vw;
+    }
+    tbody{
+
+    }
+    thead{
+        justify-content: start;
+    }
+}
