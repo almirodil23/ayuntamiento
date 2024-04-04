@@ -30,6 +30,9 @@ jobs:
           docker push registry.heroku.com/ayuntamiento/web-api
 
       - name: Desplegar en Heroku
+        run: heroku create
+        run: git push heroku master
         run: heroku container:release web-front web-api --app ayuntamiento
+
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
