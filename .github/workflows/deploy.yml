@@ -45,3 +45,5 @@ jobs:
           heroku git:remote -a ayuntamiento
           git add .
           git commit -m "Despliegue automático en Heroku"
+          git push heroku HEAD:main --force
+
