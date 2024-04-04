@@ -11,6 +11,10 @@ jobs:
     steps:
     - name: Checkout del código
       uses: actions/checkout@v3  # Actualizamos a la versión 3 de actions/checkout
+    - name: Configurar Git
+      run: |
+        git config --global user.email "almirodil@gmail.com"
+        git config --global user.name "Alvaro"      
 
     - name: Configurar Node.js
       uses: actions/setup-node@v3  # Actualizamos a la versión 3 de actions/setup-node
