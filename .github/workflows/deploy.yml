@@ -23,7 +23,7 @@ jobs:
       working-directory: ./ayuntamiento/front
       run: |
         npm install
-        npm run build -- --prod
+        npm run build 
 
     - name: Instalar dependencias de la API
       working-directory: ./ayuntamiento/api
