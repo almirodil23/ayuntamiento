@@ -9,14 +9,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    steps:
+     steps:
     - name: Checkout del código
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3  # Actualizamos a la versión 3 de actions/checkout
 
     - name: Configurar Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3  # Actualizamos a la versión 3 de actions/setup-node
       with:
-        node-version: '18.17.0'
+        node-version: '18.17.0' 
+
 
     - name: Instalar dependencias del frontend
       working-directory: ./ayuntamiento/front
