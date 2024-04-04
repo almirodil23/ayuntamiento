@@ -17,22 +17,13 @@ jobs:
         with:
           node-version: 18.17.0  # Ajusta según tu versión necesaria
 
-      - name: Build and Push Docker Images
-        uses: docker/build-push-action@v2
-        with:
-          push: true
-          tags: |
-            registry.heroku.com/ayuntamiento/web-front
-            registry.heroku.com/ayuntamiento/web-api
-          dockerfile: |
-            ./ayuntamiento/front/Dockerfile
-            ./ayuntamiento/api/Dockerfile
-
-      - name: Login to Heroku Registry
-        run: echo "${{ secrets.HEROKU_API_KEY }}" | docker login -u _ --password-stdin registry.heroku.com
-
       - name: Deploy to Heroku
-        run: |
-          docker push registry.heroku.com/ayuntamiento/web-front
-          docker push registry.heroku.com/ayuntamiento/web-api
-          heroku container:release web-front web-api --app ayuntamiento
+        uses: gonuit/heroku-docker-deploy@v1.3.3
+        with:
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_app_name: "ayuntamiento"
+          email: "alvaroados4b16@gmail.com"
+          dockerfile_directory: "./"  # Directorio donde se encuentra el Dockerfile, ajusta según tu estructura de archivos
+          dockerfile_name: "Dockerfile"  # Nombre de tu Dockerfile
+          docker_options: "--no-cache"
+          process_type: "web"
