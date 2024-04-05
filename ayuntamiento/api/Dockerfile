@@ -8,7 +8,7 @@ RUN npm install
 
 COPY . .
 
-COPY ../ayuntamiento/front/dist ./public
+COPY ../ayuntamiento/front/dist/front/borwser 
 
 # Etapa final
 FROM node:18.17.0
