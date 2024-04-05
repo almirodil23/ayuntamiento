@@ -38,7 +38,7 @@ jobs:
           process_type: web  
 
       - name: Login to Heroku Registry
-        run: echo "${{ secrets.HEROKU_API_KEY }}" | docker login -u _ --password-stdin registry.heroku.com
+        run: echo "$HEROKU_API_KEY" | docker login -u _ --password-stdin registry.heroku.com
 
       - name: Deploy to Heroku with docker-compose
         run: docker-compose -f docker-compose.yml up -d
