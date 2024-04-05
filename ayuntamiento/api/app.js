@@ -19,11 +19,11 @@ app.use(cors());
 app.use('/proovedores', enrutamientoProovedores);
 
 // Ruta estática para los archivos generados por Angular
-app.use(express.static(path.join(__dirname, 'dist/front/src/')));
+app.use(express.static(path.join(__dirname, 'dist/front')));
 
 // Ruta para todas las demás solicitudes
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist/front/src/index.html'));
+  res.sendFile(path.join(__dirname, 'dist/front/index.html'));
 });
 
 app.listen(PORT, () => { 
