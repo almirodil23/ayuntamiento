@@ -3,7 +3,7 @@ name: Node.js
 on:
   push:
     branches:
-      - main
+      - main  '
 
 jobs:
   build:
@@ -15,14 +15,30 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18.17.0  # Ajusta según tu versión necesaria
+          node-version: 18.17.0 
 
-      - name: Deploy to Heroku
+      - name: Deploy to Heroku - Frontend
         uses: gonuit/heroku-docker-deploy@v1.3.3
         with:
-          heroku_api_key: "1b9d6eca-f0f1-414e-ba90-3d334fabcd3d"
-          heroku_app_name: "ayuntamiento"
-          email: "alvaroados4b16@gmail.com"
-          dockerfile_directory: ".../"  # Directorio donde se encuentra el Dockerfile, ajusta según tu estructura de archivos
-          dockerfile_name: "docker-compose.yml"  # Nombre de tu Dockerfile
-          process_type: "web"
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_app_name: ayuntamiento
+          email: alvaroados4b16@gmail.com
+          dockerfile_directory: ./front  
+          dockerfile_name: Dockerfile  
+          process_type: web  
+
+      - name: Deploy to Heroku - API
+        uses: gonuit/heroku-docker-deploy@v1.3.3
+        with:
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_app_name: ayuntamiento
+          email: alvaroados4b16@gmail.com
+          dockerfile_directory: ./api  
+          dockerfile_name: Dockerfile  
+          process_type: web  
+
+      - name: Login to Heroku Registry
+        run: echo "${{ secrets.HEROKU_API_KEY }}" | docker login -u _ --password-stdin registry.heroku.com
+
+      - name: Deploy to Heroku with docker-compose
+        run: docker-compose -f docker-compose.yml up -d
