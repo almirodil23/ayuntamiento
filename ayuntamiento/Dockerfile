@@ -1,0 +1,20 @@
+# Etapa de construcción
+FROM node:18.17.0 AS build
+
+WORKDIR /app
+
+COPY api/package*.json ./
+RUN npm install
+
+COPY api/ .
+
+# Etapa final
+FROM node:18.17.0
+
+WORKDIR /app
+
+COPY --from=build /app .
+
+EXPOSE 3000
+
+CMD ["node", "app.js"]
