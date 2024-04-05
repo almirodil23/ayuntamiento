@@ -9,7 +9,7 @@ RUN npm install
 COPY . .
 
 # Exponer el puerto en el que la API escuchará
-EXPOSE 3000:3000
+EXPOSE 3000:$PORT
 
 # Comando para iniciar la API
 CMD ["npm", "start"]
