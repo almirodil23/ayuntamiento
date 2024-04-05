@@ -19,7 +19,6 @@ RUN npm run build
 # Configura una imagen más liviana para servir la aplicación
 FROM nginx:alpine
 
-RUN ls -l /app/dist
 
 # Copia los archivos de compilación de Angular al directorio de Nginx
 COPY --from=build /app/dist/front /usr/share/nginx/html
