@@ -13,11 +13,18 @@ RUN npm run build --prod
 # Etapa de producción
 FROM nginx:alpine
 
+# Copiar el archivo de configuración personalizado
+COPY ./nginx.conf /etc/nginx/nginx.conf
+
+# Copiar los archivos generados en la etapa de construcción
 COPY --from=build /app/dist/front/browser /usr/share/nginx/html
 
+# Exponer el puerto 8080
 EXPOSE 8080
 
+# Cambiar el usuario a nginx para que tenga permisos adecuados
 USER nginx
 
-
+# Comando para iniciar Nginx
 CMD ["nginx", "-g", "daemon off;"]
+
