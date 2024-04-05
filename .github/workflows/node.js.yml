@@ -23,6 +23,6 @@ jobs:
           heroku_api_key: "1b9d6eca-f0f1-414e-ba90-3d334fabcd3d"
           heroku_app_name: "ayuntamiento"
           email: "alvaroados4b16@gmail.com"
-          dockerfile_directory: "./"  # Directorio donde se encuentra el Dockerfile, ajusta según tu estructura de archivos
-          dockerfile_name: "Dockerfile"  # Nombre de tu Dockerfile
+          dockerfile_directory: ".../"  # Directorio donde se encuentra el Dockerfile, ajusta según tu estructura de archivos
+          dockerfile_name: "docker-compose.yml"  # Nombre de tu Dockerfile
           process_type: "web"
