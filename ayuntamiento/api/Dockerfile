@@ -8,7 +8,8 @@ RUN npm install
 
 COPY . .
 
-COPY ../ayuntamiento/front/dist/front/borwser ./public
+COPY ../front/dist/front/browser ./public
+
 
 # Etapa final
 FROM node:18.17.0
