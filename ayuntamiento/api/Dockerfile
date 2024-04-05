@@ -7,7 +7,6 @@ COPY package*.json ./
 RUN npm install
 
 
-COPY ../front/dist/front/browser ./public
 
 COPY . .
 
