@@ -3,32 +3,39 @@ name: Despliegue en Heroku
 on:
   push:
     branches:
-      - main  # Cambia por la rama que desees
+      - main  
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout del código
         uses: actions/checkout@v2
 
-      - name: Build y Push Docker Images
-        uses: docker/build-push-action@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          push: true
-          tags: |
-            tu-usuario/heroku-api:latest   # Etiqueta para la API
-            tu-usuario/heroku-frontend:latest  # Etiqueta para el frontend
-          dockerfile: |
-            Dockerfile  # Dockerfile para la API
-            Dockerfile-front  # Dockerfile para el frontend
+          node-version: 18.17.0 
 
-      - name: Login a Heroku Container Registry
-        run: echo "${{ secrets.HEROKU_API_KEY }}" | docker login -u _ --password-stdin registry.heroku.com
+      - name: Deploy to Heroku - Frontend
+        uses: gonuit/heroku-docker-deploy@v1.3.3
+        with:
+          heroku_api_key: "1b9d6eca-f0f1-414e-ba90-3d334fabcd3d"
+          heroku_app_name: ayuntamiento
+          email: alvaroados4b16@gmail.com
+          dockerfile_directory: ayuntamiento/front  
+          dockerfile_name: Dockerfile-front  # Nombre del Dockerfile del frontend
+          process_type: web  
 
-      - name: Desplegar en Heroku
-        run: |
-          docker push tu-usuario/heroku-api:latest
-          docker push tu-usuario/heroku-frontend:latest
-          heroku container:release -a nombre-de-tu-app web   # Cambia 'nombre-de-tu-app' por el nombre de tu app en Heroku
+      - name: Deploy to Heroku - API
+        uses: gonuit/heroku-docker-deploy@v1.3.3
+        with:
+          heroku_api_key: "1b9d6eca-f0f1-414e-ba90-3d334fabcd3d"
+          heroku_app_name: ayuntamiento
+          email: alvaroados4b16@gmail.com
+          dockerfile_directory: ayuntamiento/api  
+          dockerfile_name: Dockerfile  # Nombre del Dockerfile de la API
+          process_type: web  
+
+      - name: Deploy to Heroku with docker-compose
+        run: docker-compose -f docker-compose.yml up -d
