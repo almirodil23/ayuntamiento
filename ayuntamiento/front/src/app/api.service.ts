@@ -12,7 +12,8 @@ export class APIService {
   private proovedoresSubject = new BehaviorSubject<any[]>([]);
 
 
-  private url = `${environment.apiUrl}/proovedores`;
+  //private url = `${environment.apiUrl}/proovedores`;
+  private url = "http://localhost:3000/proovedores"
 
 
   constructor(private http:HttpClient) {
