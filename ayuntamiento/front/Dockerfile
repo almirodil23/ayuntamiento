@@ -22,7 +22,7 @@ FROM nginx:alpine
 RUN ls -l /app/dist
 
 # Copia los archivos de compilación de Angular al directorio de Nginx
-COPY --from=build /app/dist/ayuntamiento /usr/share/nginx/html
+COPY --from=build /app/dist/front /usr/share/nginx/html
 
 # Expone el puerto 80 para que la aplicación sea accesible
 EXPOSE 80
