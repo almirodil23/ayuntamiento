@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname, 'dist/front')));
 
 // Ruta para todas las demás solicitudes
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist/front/index.html'));
+  res.sendFile(path.join(__dirname, 'app/dist/front/index.html'));
 });
 
 app.listen(PORT, () => { 
