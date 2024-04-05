@@ -3,7 +3,7 @@ FROM node:18.17.0 AS build
 
 WORKDIR /app
 
-COPY api/package*.json ./
+COPY api/package.json ./
 RUN npm install
 
 COPY . .
