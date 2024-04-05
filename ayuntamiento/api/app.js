@@ -19,6 +19,6 @@ app.use('/proovedores', enrutamientoProovedores);
 
 
 app.listen(PORT, () => { 
-    console.log('Servidor corriendo en http://localhost:3000'); 
+    console.log(`Servidor corriendo en http://localhost:${PORT}`); 
 });
 
