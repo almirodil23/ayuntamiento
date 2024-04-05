@@ -9,9 +9,6 @@ const enrutamientoProovedores = require('./rutas.js')
 
 app.use(express.json());
 
-app.get('/', (req,res) => {
-    res.send('Bienvenido a la API de Proveedores');
-})
 
 app.use(cors());
 
