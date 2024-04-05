@@ -3,6 +3,5 @@ WORKDIR /src/app
 COPY package*.json ./ 
 RUN npm install 
 COPY . . 
-EXPOSE 4200 
-EXPOSE 4200
+EXPOSE $PORT
 CMD [ "npm", "start" ]
