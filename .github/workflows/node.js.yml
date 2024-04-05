@@ -23,7 +23,7 @@ jobs:
           heroku_api_key: "1b9d6eca-f0f1-414e-ba90-3d334fabcd3d"
           heroku_app_name: ayuntamiento
           email: alvaroados4b16@gmail.com
-          dockerfile_directory: ./front  
+          dockerfile_directory: ayuntamiento/front  
           dockerfile_name: Dockerfile  
           process_type: web  
 
@@ -33,7 +33,7 @@ jobs:
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
           heroku_app_name: ayuntamiento
           email: alvaroados4b16@gmail.com
-          dockerfile_directory: ./api  
+          dockerfile_directory: ayuntamiento/api  
           dockerfile_name: Dockerfile  
           process_type: web  
 
