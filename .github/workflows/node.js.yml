@@ -23,9 +23,9 @@ jobs:
           heroku_api_key: "1b9d6eca-f0f1-414e-ba90-3d334fabcd3d"
           heroku_app_name: ayuntamiento
           email: alvaroados4b16@gmail.com
-          dockerfile_directory: ayuntamiento/api  
+          dockerfile_directory: ayuntamie nto/api  
           dockerfile_name: Dockerfile  # Nombre del Dockerfile de la API
-          process_type: web          
+          process_type: web         
 
       - name: Deploy to Heroku - Frontend
         uses: gonuit/heroku-docker-deploy@v1.3.3
