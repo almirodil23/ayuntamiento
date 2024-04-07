@@ -14,5 +14,5 @@ services:
       context: ./ayuntamiento/front
       dockerfile: Dockerfile-front
     ports:
-      - "4200:4200"      # Puertos del frontend
+      - "8000:4200"      # Puertos del frontend
     restart: always
