@@ -12,16 +12,16 @@ COPY . .
 RUN npm run build --prod
 
 # Etapa de producción
-FROM nginx:alpine
+#FROM nginx:alpine
 
 # Copiar los archivos generados en la etapa de construcción
-COPY --from=build /app/dist/front/browser /usr/share/nginx/html
+#COPY --from=build /app/dist/front/browser /usr/share/nginx/html
 
 # Exponer el puerto en el que el servidor Nginx escuchará
 
 EXPOSE 4200
 
-CMD ["nginx", "-g", "daemon off;"]
+#CMD ["nginx", "-g", "daemon off;"]
 
 
 
@@ -29,4 +29,4 @@ CMD ["nginx", "-g", "daemon off;"]
 
 
 # Comando para iniciar el servidor Nginx
-CMD ["nginx", "-g", "daemon off;"]
+#CMD ["nginx", "-g", "daemon off;"]
