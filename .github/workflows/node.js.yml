@@ -32,4 +32,4 @@ jobs:
   
 
       - name: Deploy to Heroku with docker-compose
-        run: docker-compose -f docker-compose.yml up -d
+        run: docker-compose -f docker-compose.yml up -d --build
