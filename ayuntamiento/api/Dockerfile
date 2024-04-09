@@ -1,20 +1,20 @@
-# Utiliza una imagen base de Node.js
-FROM node:18.17.0
+# Usa una imagen base de Node.js
+FROM node:latest
 
-# Establece el directorio de trabajo
+# Establece el directorio de trabajo en /app
 WORKDIR /app
 
-# Copia el package.json y el package-lock.json a la imagen
+# Copia el archivo package.json y package-lock.json para instalar las dependencias
 COPY package*.json ./
 
 # Instala las dependencias
 RUN npm install
 
-# Copia el resto de los archivos del proyecto
+# Copia todos los archivos de la API al directorio de trabajo
 COPY . .
 
-# Expone el puerto en el que la API estará escuchando
+# Expone el puerto en el que la API escucha
 EXPOSE 3000
 
-# Comando para iniciar la API
+# Comando para ejecutar la API
 CMD ["npm", "start"]

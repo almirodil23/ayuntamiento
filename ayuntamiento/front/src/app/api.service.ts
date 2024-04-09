@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable,BehaviorSubject } from 'rxjs';
-
+import { environment } from '../environments/environments.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,8 @@ export class APIService {
   private proovedoresSubject = new BehaviorSubject<any[]>([]);
 
 
-  private url='http://localhost:3000/proovedores'
+  //private url = `${environment.apiUrl}/proovedores`;
+  private url = "http://localhost:3000/proovedores"
 
 
   constructor(private http:HttpClient) {
