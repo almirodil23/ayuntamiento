@@ -1,12 +1,6 @@
 compose:
 
-  api: 
-    build:
-      context: ./ayuntamiento/api
-      dockerfile: Dockerfile
-    ports:
-      - "3000:3000"  # Puertos de la API
-    restart: always
+
 
 
 Dockerfile:

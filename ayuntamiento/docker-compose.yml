@@ -3,7 +3,7 @@ version: '3'
 services:
   api: 
     build:
-      context: ./ayuntamiento/api
+      context: /api
       dockerfile: Dockerfile
     ports:
       - "3000:3000"  # Puertos de la API
@@ -11,8 +11,8 @@ services:
 
   frontend:
     build:
-      context: ./ayuntamiento/front
+      context: /front
       dockerfile: Dockerfile-front
     ports:
-      - "4200"      # Puertos del frontend
+      - "80:80"      # Puertos del frontend
     restart: always

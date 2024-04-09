@@ -76,7 +76,7 @@ button:hover {
   }
 
 table{
-    width:70vw;
+    width:100vw;
     height:100vh;
     display:flex;
     grid-template-columns: 1fr;
