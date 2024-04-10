@@ -3,6 +3,12 @@ div{
     align-items: center;
     justify-content: center;
     margin-top:20%;
+    animation: mover 2s forwards;
+    animation-delay: 1s; 
+    animation-fill-mode: forwards; 
+    opacity:0;
+
+
 
 }
 
@@ -13,4 +19,10 @@ button{
 
 h1{
     display:flex;
-    justify-content: center;}
+    justify-content: center;
+    animation:mover1 2s forwards;
+    animation-delay: 1s;
+    animation-fill-mode: forwards; 
+    opacity:0;}
+
+

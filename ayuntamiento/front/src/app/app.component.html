@@ -4,7 +4,7 @@
         </div>
     <div *ngIf="componenteActual === 1 || 2 || 3 || 4">
       <app-home class="root"></app-home>
-      <div *ngIf="componenteActual !=0" style="display:flex;z-index:-1;">
+      <div *ngIf="componenteActual !=0" style="display:flex;">
         <button (click)="deslogear()" style="text-align:center;position:fixed;">LogOut</button>
       </div>
     </div>
