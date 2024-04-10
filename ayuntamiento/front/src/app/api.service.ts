@@ -13,7 +13,7 @@ export class APIService {
 
 
   //private url = `${environment.apiUrl}/proovedores`;
-  private url = "http://localhost:3000/proovedores"
+  private url = "http://3.68.167.172:3000/proovedores"
 
 
   constructor(private http:HttpClient) {
